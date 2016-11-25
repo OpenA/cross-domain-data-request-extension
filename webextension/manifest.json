@@ -1,0 +1,29 @@
+{
+	"name": "Crossdomain Data Request",
+	"description": "Helps to get data from any domains.",
+	"version": "1.0",
+	"background": {
+		"scripts": ["background.js"]
+	},
+	"applications": {
+		"gecko": {
+			"id": "xGthFD@magicCode",
+			"strict_min_version": "45.0"
+		}
+	},
+	"content_scripts": [{
+		"all_frames": true,
+		"js": ["content_script.js"],
+		"matches": [ "*://*/*" ],
+		"run_at": "document_start"
+	}],
+	"web_accessible_resources": [
+		"CDDRequest.js"
+	],
+	"permissions": ["tabs", "<all_urls>"],
+	"icons": {
+		"48": "appicon.png",
+		"128": "appicon128.png"
+	},
+	"manifest_version": 2
+}
